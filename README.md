@@ -4,6 +4,7 @@
 An authentication API built with Node.js, Express, MySQL, and JWT. 
 This project demonstrates signup, login, logout, and profile retrieval using a MySQL database.
 
+---
 
 ### Setup Steps
 
@@ -40,7 +41,7 @@ npm install
     - Click Create.
 
     Go to the database you created, open the SQL tab and run:
-
+     ```
     CREATE TABLE IF NOT EXISTS users (
       id INT AUTO_INCREMENT PRIMARY KEY,
       email VARCHAR(100) NOT NULL UNIQUE,
@@ -58,9 +59,13 @@ npm install
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-### Run the Server
 
- 1. Run the server.js through VSCode
+### How to Run
+
+ 1. Run the server  
+ ```bash
+ npm run dev
+
  2. Check if it’s working:
      - GET http://localhost:3000/api/health (Run through postman/browser)
      - You should get a JSON response similar to:
@@ -70,6 +75,7 @@ npm install
          "time": "2025-09-04T07:59:08.035Z"
        }
 
+---
 
 ### List of Endpoints
 
