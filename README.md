@@ -8,31 +8,33 @@ This project demonstrates signup, login, logout, and profile retrieval using a M
 
 ### Setup Steps
 
-1.  Clone & Install
-```bash
-git clone https://github.com/riyoki/lab-auth-api.git
-cd lab-auth-api
+1. Clone & Install  
+   ```bash
+   git clone https://github.com/riyoki/lab-auth-api.git
+   cd lab-auth-api
 
 2. Install dependencies
-```bash
-npm install
+   ```bash
+   npm install
 
-3. Configure environment variables
-   Copy .env.example to .env
-   
-  Fill in your MySQL details:
-    DB_HOST=yourhost
-    DB_USER=yourusername
-    DB_PASS=yourpassword
-    DB_NAME=yourdbname
-    DB_PORT=yourport
-    SERVER_PORT=3000
-  
-    JWT_SECRET=replace_with_a_long_random_string
-    JWT_EXPIRES=1h
+3. Configure environment variables  
+   Copy `.env.example` to `.env`  
+
+   Fill in your MySQL details:  
+
+   ```env
+   DB_HOST=yourhost
+   DB_USER=yourusername
+   DB_PASS=yourpassword
+   DB_NAME=yourdbname
+   DB_PORT=yourport
+   SERVER_PORT=3000
+
+   JWT_SECRET=replace_with_a_long_random_string
+   JWT_EXPIRES=1h
 
 4. Setup Database
-   - Open phpMyAdmin
+  - Open phpMyAdmin
      Usually at http://localhost/phpmyadmin (if you’re using XAMPP).
   - Create a new database
     - On the left sidebar, click New.
@@ -41,7 +43,7 @@ npm install
     - Click Create.
 
     Go to the database you created, open the SQL tab and run:
-     ```
+      ```sql
     CREATE TABLE IF NOT EXISTS users (
       id INT AUTO_INCREMENT PRIMARY KEY,
       email VARCHAR(100) NOT NULL UNIQUE,
@@ -58,13 +60,11 @@ npm install
       revoked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
-
 ### How to Run
 
  1. Run the server  
- ```bash
- npm run dev
+    ```bash
+    npm run dev
 
  2. Check if it’s working:
      - GET http://localhost:3000/api/health (Run through postman/browser)
@@ -81,7 +81,7 @@ npm install
 
 Base URL: http://localhost:3000/api
 
-Auth
+Authentication
 - POST /auth/signup -> Create new user
 - POST /auth/login -> Login & get token
 - POST /auth/logout -> Revoke token (requires Bearer token)
